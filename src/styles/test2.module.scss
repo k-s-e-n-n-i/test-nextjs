@@ -1,0 +1,23 @@
+.main {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.title {
+  background-color: green;
+  max-width: 815px;
+
+  flex-grow: 99;
+  flex-basis: 250px;
+}
+
+.block {
+  background-color: red;
+  max-width: 575px;
+  aspect-ratio: 1/1;
+
+  flex-basis: 200px;
+  flex-grow: 1;
+}
