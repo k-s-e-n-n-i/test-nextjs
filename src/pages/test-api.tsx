@@ -1,7 +1,7 @@
 import { APIData } from "@/services/Requests";
-import styled from "../styles/test/test-block.module.scss";
+import styled from "../styles/test-api.module.scss";
 import { API2 } from "@/services/APIRequests";
-import { Props } from "./test/interfaces";
+import { Props } from "./test-api/interfaces";
 
 export const getServerSideProps = async () => {
   let dataArr: any = [];

@@ -1,0 +1,10 @@
+.column {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.main {
+  margin: 0 auto;
+  width: calc(100% - 80px);
+}
