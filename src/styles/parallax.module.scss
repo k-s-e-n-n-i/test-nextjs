@@ -1,11 +1,65 @@
 .scene {
   width: 50%;
-  margin: 0 auto;
+  margin: 20px auto 0;
+  background: no-repeat center;
+  background-image: url("../images/1.jpg");
+  aspect-ratio: 15/10;
+
+  img {
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+  }
 }
 
 .image {
   width: 100%;
   height: auto;
-  aspect-ratio: 15/10;
   object-fit: cover;
+
+  border-radius: 50%;
+
+  &:nth-child(1) {
+    margin: 100px 0 0 200px;
+  }
+  &:nth-child(2) {
+    margin: 500px 0 0 1000px;
+  }
+  &:nth-child(3) {
+    margin: 1000px 0 0 700px;
+  }
+}
+
+.parallaxBlock {
+  min-height: 80vh;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 60%;
+  border-radius: 20px;
+
+  &:nth-child(1) {
+    background-image: url("../images/1.jpg");
+  }
+
+  &:nth-child(2) {
+    background-image: url("../images/2.jpg");
+  }
+
+  &:nth-child(3) {
+    background-image: url("../images/3.jpg");
+  }
+
+  &:nth-child(2n) {
+    margin: 0 0 0 auto;
+  }
+}
+
+.para {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  padding: 50px;
+  background-color: #000;
 }
