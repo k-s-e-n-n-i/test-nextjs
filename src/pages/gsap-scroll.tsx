@@ -1,10 +1,11 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import styled from "../styles/gsap-scroll.module.scss";
 
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import { Portal } from "@/components/Portal/Portal";
 // import ScrollSmoother from "gsap/dist/ScrollSmoother";
 
 const Gsap2 = () => {
@@ -22,6 +23,12 @@ const Gsap2 = () => {
 
   return (
     <div ref={container}>
+      <h3>GSAP-анимации со скроллом</h3>
+
+      <Portal>
+        <div className={styled.portal}></div>
+      </Portal>
+
       <div className={styled.gsapContainer}>
         <div className={styled.blockScroll}>
           <div className={styled.scrollA} data-lag="2"></div>
@@ -36,11 +43,11 @@ const Gsap2 = () => {
               <span>you here</span>
             </h1>
 
-            <h2 className={styled.title}>
+            {/* <h2 className={styled.title}>
               <span>This is</span>
               <span>a long</span>
               <span>sub title</span>
-            </h2>
+            </h2> */}
           </div>
         )}
         <div className={styled.block2Scroll}>
@@ -97,12 +104,12 @@ const ScrollTriggerFunc = (bgColor: string, setBgColor: any, setShowText: any) =
     ...settings,
   });
 
-  gsap.to(`[class*="gsapContainer"], [class*="scrollB"]`, {
+  gsap.to(`[class*="gsapContainer"], [class*="scrollB"], .portal`, {
     scrollTrigger,
     duration: 4,
     backgroundColor: bgColor, //`#${Math.ceil(Math.random() * 0xffffff).toString(16)}`,
     onUpdate: () => {
-      setBgColor(`#${Math.ceil(Math.random() * 0xffffff).toString(16)}`);
+      // setBgColor(`#${Math.ceil(Math.random() * 0xffffff).toString(16)}`);
       setShowText(true);
     },
     onStart: () => {

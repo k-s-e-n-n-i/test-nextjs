@@ -1,4 +1,3 @@
-import Link from "next/link";
 import GStyled from "../styles/app.module.scss";
 
 const Page = () => {

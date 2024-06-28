@@ -5,6 +5,11 @@
 }
 
 .main {
+  position: relative;
+  z-index: 1;
+}
+
+.container {
   margin: 0 auto;
   width: calc(100% - 80px);
 }
