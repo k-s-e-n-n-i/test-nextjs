@@ -1,7 +1,6 @@
 .gsapContainer {
   padding: 1000px 0;
   height: 100vh;
-  background-color: #eee;
 }
 
 .blockScroll {
@@ -108,17 +107,6 @@
     }
   }
 
-  .usechrome {
-    font-size: 10px;
-    color: #fff;
-    font-family: helvetica, arial;
-    position: absolute;
-    bottom: 20px;
-    width: 100%;
-    text-align: center;
-    left: 0;
-  }
-
   @keyframes titleAnimation {
     0% {
       transform: translateY(-50px);
@@ -141,4 +129,13 @@
       clip-path: polygon(100% 0, 100% -0%, 0 100%, 0 100%);
     }
   }
+}
+
+.portal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
 }

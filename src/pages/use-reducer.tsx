@@ -9,6 +9,8 @@ const TestUseReducer = () => {
 
   return (
     <div>
+      <h3>Использование useReducer</h3>
+
       <button type="button" onClick={toggleVisible}>
         toggle
       </button>

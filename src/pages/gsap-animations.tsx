@@ -20,6 +20,8 @@ const Gsap = () => {
 
   return (
     <div className={styled.gsap} ref={container}>
+      <h3>GSAP-анимации</h3>
+
       <div className={styled.main}>
         <h1 className={styled.title} id="title">
           Заголовок - тут был какой-то длинный текст, тут был какой-то длинный текст
