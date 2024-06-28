@@ -9,6 +9,9 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@floating-ui/dom": "^1.6.6",
+    "@floating-ui/react": "^0.26.18",
+    "@floating-ui/react-dom": "^2.1.1",
     "@gsap/react": "^2.1.1",
     "axios": "^1.7.2",
     "gsap": "^3.12.5",

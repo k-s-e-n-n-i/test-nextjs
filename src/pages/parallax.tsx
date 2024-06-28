@@ -17,6 +17,19 @@ const PageParallax = () => {
         selector: ".layer",
       });
     }
+
+    const parallTest = () => {
+      const parallaxBlocks = document.querySelectorAll("[class*=parallaxBlock]");
+      parallaxBlocks.forEach(function (block: any) {
+        const speed = 0.5;
+        const yPos = window.pageYOffset * speed;
+        block.style.backgroundPosition = "center " + yPos + "px";
+      });
+    };
+
+    window.addEventListener("scroll", parallTest);
+
+    return window.removeEventListener("scroll", parallTest);
   }, []);
 
   return (
@@ -32,6 +45,12 @@ const PageParallax = () => {
           <div className="layer" data-depth="0">
             <Image src={Img3} alt="" className={styled.image} />
           </div>
+        </div>
+
+        <div className={styled.para}>
+          <div className={styled.parallaxBlock}></div>
+          <div className={styled.parallaxBlock}></div>
+          <div className={styled.parallaxBlock}></div>
         </div>
       </div>
 
