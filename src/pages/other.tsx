@@ -1,30 +1,25 @@
-import { PopperMy } from "@/components/Popper/Popper";
-import { useState } from "react";
-import { usePopper } from "react-popper";
+import Highlight from "react-highlight";
+import styled from "../styles/text.module.scss";
 
 const Other = () => {
-  const [referenceElement, setReferenceElement] = useState(null);
-  const [popperElement, setPopperElement] = useState(null);
-  const [arrowElement, setArrowElement] = useState(null);
-
-  const { styles, attributes } = usePopper(referenceElement, popperElement, {
-    modifiers: [{ name: "arrow", options: { element: arrowElement } }],
-  });
+  const code = `
+  // Ваш фрагмент кода здесь
+  <div className={styled.textBlock}>
+    <p>G</p>
+    <p>o</p>
+    <p>o</p>
+    <p>d</p>
+    <p>b</p>
+    <p>y</p>
+    <p>e</p>
+  </div>
+  `;
 
   return (
     <div>
-      <button type="button" ref={referenceElement}>
-        Reference element
-      </button>
-
-      <div ref={popperElement} style={styles.popper} {...attributes.popper}>
-        {/* <div
-          style={{ width: "200px", height: "200px", background: "red" }}
-        ></div> */}
-        <div ref={arrowElement} style={styles.arrow} />
+      <div className={styled.code}>
+        <Highlight className="language-html">{code}</Highlight>
       </div>
-
-      <PopperMy />
     </div>
   );
 };
