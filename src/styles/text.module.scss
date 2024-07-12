@@ -1,0 +1,45 @@
+.text {
+  width: 400px;
+  position: relative;
+
+  p {
+    font-size: 40px;
+    font-weight: bold;
+  }
+}
+
+.textBlock {
+  display: flex;
+  text-transform: uppercase;
+
+  p {
+    width: 100%;
+    float: left;
+    clip-path: polygon(100% 80%, 100% 100%, 0 100%, 0 80%);
+  }
+
+  @for $i from 0 to 8 {
+    p:nth-child(#{$i}) {
+      animation: titleAnimation 1s $i * 0.05s forwards;
+    }
+  }
+}
+
+.block {
+  background-color: red;
+  width: 200px;
+  height: 200px;
+
+  clip-path: polygon(100% 80%, 100% 100%, 0 100%, 0 80%);
+  animation: titleAnimation 1s forwards;
+}
+
+@keyframes titleAnimation {
+  0% {
+    clip-path: polygon(100% 80%, 100% 100%, 0 100%, 0 80%);
+  }
+  100% {
+    clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 0%);
+  }
+}
+
