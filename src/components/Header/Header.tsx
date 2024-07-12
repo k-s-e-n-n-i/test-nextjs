@@ -10,6 +10,7 @@ export const Header = () => {
       <Link href="/test-api">test-api</Link>
       <Link href="/adaptive-flex">adaptive-flex</Link>
       <Link href="/animations-text">animations-text</Link>
+      <Link href="/text">text</Link>
       <Link href="/popper">popper/floating</Link>
       <Link href="/parallax">parallax</Link>
 
