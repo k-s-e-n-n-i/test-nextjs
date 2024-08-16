@@ -13,6 +13,7 @@ export const Header = () => {
       <Link href="/text">text</Link>
       <Link href="/popper">popper/floating</Link>
       <Link href="/parallax">parallax</Link>
+      <Link href="/radix">radix</Link>
 
       <Link href="/other">other</Link>
     </div>

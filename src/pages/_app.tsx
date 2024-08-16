@@ -1,9 +1,19 @@
 import Layout from "../components/layout";
 import "../styles/all.scss";
 
-export default function MyApp({ Component, pageProps }: any) {
+type Props = {
+  Component: {
+    (props: any): JSX.Element;
+    config?: {
+      hasContainer?: boolean;
+    };
+  };
+  pageProps: any;
+};
+
+export default function MyApp({ Component, pageProps }: Props) {
   return (
-    <Layout>
+    <Layout hasContainer={Component.config?.hasContainer}>
       <Component {...pageProps} />
     </Layout>
   );
