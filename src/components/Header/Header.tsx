@@ -15,6 +15,8 @@ export const Header = () => {
       <Link href="/parallax">parallax</Link>
       <Link href="/radix">radix</Link>
 
+      <Link href="/anim1">anim1</Link>
+
       <Link href="/other">other</Link>
     </div>
   );

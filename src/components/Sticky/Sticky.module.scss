@@ -1,0 +1,15 @@
+.sticky {
+  overflow: hidden;
+  width: 100%;
+}
+
+.container {
+  width: calc(100% - 80px);
+  height: 3000px;
+  position: absolute;
+}
+
+.element {
+  position: sticky;
+  width: 100%;
+}
