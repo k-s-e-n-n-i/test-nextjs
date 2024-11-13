@@ -57,3 +57,28 @@ export const goJsAnimation = (items: NodeListOf<Element>) => {
     });
   });
 };
+
+export const goCssAnimation = (items: NodeListOf<Element>) => {
+  const points: number[] = [];
+
+  items.forEach((x) => {
+    points.push(x.getBoundingClientRect().top);
+  });
+
+  document.addEventListener("scroll", (e) => {
+    items.forEach((x, i) => {
+      if (i === 0) {
+        return;
+      }
+
+      if (window.scrollY > points[i]) {
+        (x as HTMLElement).classList.add("css-open");
+        (x as HTMLElement).classList.remove("css-close");
+        return;
+      }
+
+      (x as HTMLElement).classList.remove("css-open");
+      (x as HTMLElement).classList.add("css-close");
+    });
+  });
+};
