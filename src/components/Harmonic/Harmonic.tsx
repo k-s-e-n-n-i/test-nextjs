@@ -1,7 +1,7 @@
 import { useGSAP } from "@gsap/react";
 import s from "./Harmonic.module.scss";
 import { useEffect, useRef } from "react";
-import { goAnimation, goJsAnimation } from "./functions";
+import { goAnimation, goCssAnimation, goJsAnimation } from "./functions";
 
 type Props = {
   list: number[];
@@ -20,6 +20,7 @@ export const Harmonic = ({ list, type }: Props) => {
 
   useEffect(() => {
     if (type === "js") goJsAnimation(container.current.querySelectorAll(`.${s.baseBlock}.js`));
+    if (type === "css") goCssAnimation(container.current.querySelectorAll(`.${s.baseBlock}.css`));
   }, []);
 
   return (
