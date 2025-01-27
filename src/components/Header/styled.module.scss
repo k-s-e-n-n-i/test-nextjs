@@ -1,6 +1,50 @@
+.header {
+  background-color: #ffffff;
+}
+
+.topMenu {
+  padding: 8px 20px 0;
+  display: flex;
+  justify-content: flex-end;
+}
+
 .menu {
   display: flex;
+  flex-direction: column;
   gap: 16px;
-  padding: 0 20px;
   flex-wrap: wrap;
+  padding: 20px;
+  min-width: 150px;
+  height: 100dvh;
+  position: fixed;
+  right: 0;
+  background-color: #ffffff;
+  animation: Open 0.2s forwards;
+  z-index: 100;
+}
+
+.closedMenu {
+  animation: Closed 0.2s forwards;
+}
+
+@keyframes Closed {
+  0% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+}
+
+@keyframes Open {
+  0% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }

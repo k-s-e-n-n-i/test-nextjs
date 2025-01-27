@@ -1,23 +1,30 @@
 import Link from "next/link";
 import styled from "./styled.module.scss";
+import { useState } from "react";
+import { useRouter } from "next/router";
+import { MENU } from "./constants";
 
 export const Header = () => {
+  const [isOpenMenu, setIsOpenMenu] = useState(false);
+
+  const open = () => setIsOpenMenu(true);
+  const close = () => setIsOpenMenu(false);
+
+  const router = useRouter();
+
   return (
-    <div className={styled.menu}>
-      <Link href="/use-reducer">use-reducer</Link>
-      <Link href="/gsap-animations">gsap-animations</Link>
-      <Link href="/gsap-scroll">gsap-scroll</Link>
-      <Link href="/test-api">test-api</Link>
-      <Link href="/adaptive-flex">adaptive-flex</Link>
-      <Link href="/animations-text">animations-text</Link>
-      <Link href="/text">text</Link>
-      <Link href="/popper">popper/floating</Link>
-      <Link href="/parallax">parallax</Link>
-      <Link href="/radix">radix</Link>
+    <div className={styled.header}>
+      <div className={styled.topMenu}>
+        {isOpenMenu ? <button onClick={close}>X</button> : <button onClick={open}>show menu</button>}
+      </div>
 
-      <Link href="/anim1">anim1</Link>
-
-      <Link href="/other">other</Link>
+      <div className={`${styled.menu}${isOpenMenu ? "" : " " + styled.closedMenu}`}>
+        {MENU.map(({ text, link }, i) => (
+          <Link href={link} className={router.pathname === link ? "active" : ""} onClick={close} key={i}>
+            {text}
+          </Link>
+        ))}
+      </div>
     </div>
   );
 };
